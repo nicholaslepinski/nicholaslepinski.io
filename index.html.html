@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicholas Lepinski | Professional Profile</title>
+    <!-- Google Fonts for Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #1e3a8a; /* Deep professional blue */
+            --accent-color: #3b82f6; /* Vibrant brand blue */
+            --text-dark: #1f2937; /* Off-black for readability */
+            --text-light: #4b5563; /* Subtle gray for secondary text */
+            --bg-light: #f9fafb; /* Light neutral background */
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header / About Flex Layout */
+        header {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            padding: 40px;
+            border-bottom: 1px solid #e5e7eb;
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 20px;
+            }
+        }
+
+        .header-img-container {
+            flex-shrink: 0;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--white);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .header-text {
+            flex-grow: 1;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .about-text {
+            color: var(--text-light);
+            font-size: 1.05rem;
+        }
+
+        /* Section Layouts */
+        section {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        /* Expertise Grid */
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .expertise-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .expertise-item {
+            background-color: #f3f4f6;
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .expertise-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 50px 30px;
+            border-radius: 8px;
+        }
+
+        blockquote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            max-width: 700px;
+            margin: 0 auto 15px auto;
+            line-height: 1.4;
+        }
+
+        cite {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-style: normal;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Mission & Vision Split Layout */
+        .mv-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .mv-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .section-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            padding-top: 10px;
+        }
+
+        .social-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #f3f4f6;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+
+        .social-btn:hover {
+            background-color: var(--accent-color);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Header / About Section -->
+        <header>
+            <div class="header-img-container">
+                <!-- Replace src with Nicholas Lepinski's profile image -->
+                <img src="https://via.placeholder.com/220" alt="Nicholas Lepinski Headshot">
+            </div>
+            <div class="header-text">
+                <h1>Nicholas Lepinski</h1>
+                <div class="subtitle">Founder & Owner/Operator</div>
+                <p class="about-text">
+                    Nicholas Lepinski is the driving force behind <strong>Dr. Drip Plumbing and Heating</strong>, a professional service company based in Westwood, New Jersey. Known for his strong work ethic and hands-on leadership style, he built the business from the ground up to serve homeowners and businesses throughout Bergen County, New Jersey, and Rockland County, New York. With a reputation centered on honesty, consistent quality, and clear communication, Nicholas focuses on developing long-term client relationships rather than quick, temporary fixes.
+                </p>
+            </div>
+        </header>
+
+        <!-- Expertise Section -->
+        <section id="expertise">
+            <h2>Core Expertise</h2>
+            <div class="expertise-grid">
+                <div class="expertise-item">
+                    <h3>Advanced Technical Plumbing</h3>
+                    <p>Possesses deep technical knowledge in plumbing systems, handling diagnostics, repairs, installations, and system maintenance with high safety standards.</p>
+                </div>
+                <div class="expertise-item">
+                    <h3>Hands-On Leadership</h3>
+                    <p>Actively manages daily business operations and directly oversees projects to maintain strict quality control and team accountability.</p>
+                </div>
+                <div class="expertise-item">
+                    <h3>Customer Relationship Management</h3>
+                    <p>Focuses heavily on building long-term local trust through responsive communication, personalized service, and transparent pricing.</p>
+                </div>
+                <div class="expertise-item">
+                    <h3>Operational Efficiency & Strategy</h3>
+                    <p>Streamlines workflows, coordinates strict project timelines, and utilizes strategic planning to expand services while maintaining premium standards.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote Section -->
+        <section class="quote-section">
+            <blockquote>"Every job is an opportunity to prove your standards — quality workmanship and professionalism should never be compromised."</blockquote>
+            <cite>— Nicholas Lepinski</cite>
+        </section>
+
+        <!-- Mission & Vision Section -->
+        <div class="mv-container">
+            <section class="mv-box">
+                <h2>My Mission</h2>
+                <!-- Replace src with Mission themed image (e.g., tools, reliable work, teamwork) -->
+                <img src="https://via.placeholder.com/400x200" alt="Mission Context Image" class="section-img">
+                <p>My mission is to deliver reliable, high-quality plumbing and heating services built on trust, consistency, and hands-on expertise. I am committed to providing solutions that not only fix immediate issues but also ensure long-term performance and customer satisfaction. By maintaining strong work ethics and attention to detail, I strive to exceed expectations on every project.</p>
+            </section>
+            
+            <section class="mv-box">
+                <h2>My Vision</h2>
+                <!-- Replace src with Vision themed image (e.g., business growth, community service, modern blueprint) -->
+                <img src="https://via.placeholder.com/400x200" alt="Vision Context Image" class="section-img">
+                <p>My vision is to grow a trusted plumbing and heating company known for consistent quality, reliability, and customer-first service. I aim to set higher standards in workmanship while expanding services to meet evolving needs. By investing in skills, efficiency, and long-term relationships, I strive to build a strong reputation in every community served, ensuring lasting value and dependable solutions.</p>
+            </section>
+        </div>
+
+        <!-- Social Links Section -->
+        <section id="contact" style="text-align: center;">
+            <h2>Connect With Me</h2>
+            <p style="color: var(--text-light); margin-bottom: 25px;">Follow updates, industry insights, and portfolios across these platforms:</p>
+            <div class="social-links">
+                <a href="https://nicholaslepinski.carrd.co/" target="_blank" class="social-btn">LinkedIn</a>
+                <a href="https://nicholaslepinski.carrd.co/" target="_blank" class="social-btn">Instagram</a>
+                <a href="https://nicholaslepinski.carrd.co/" target="_blank" class="social-btn">YouTube</a>
+                <a href="https://nicholaslepinski.carrd.co/" target="_blank" class="social-btn">Behance</a>
+                <a href="https://sites.google.com/view/nicholaslepinski/" target="_blank" class="social-btn">Pinterest</a>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Nicholas Lepinski. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
